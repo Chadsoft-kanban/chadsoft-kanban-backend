@@ -20,7 +20,7 @@ app.use(helmet());
 app.use(express.json());
 
 // parse urlencoded request body
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
 // serving client files in production
 if (env.NODE_ENV === 'production') {

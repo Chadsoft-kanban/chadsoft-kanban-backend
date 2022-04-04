@@ -1,13 +1,15 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "yarn build",
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "test": "jest --testTimeout=10000"
   },
   "author": "",
   "license": "ISC",
@@ -43,7 +45,15 @@
     "eslint-plugin-testing-library": "^5.0.6",
     "jest": "27.5.1",
     "nodemon": "^2.0.15",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "supertest": "6.2.2",
+    "ts-jest": "27.1.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "packageManager": "yarn@3.0.2"
 }

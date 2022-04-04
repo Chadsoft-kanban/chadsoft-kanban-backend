@@ -8,7 +8,7 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:prettier/recommended',
   ],
-  env: { es6: true, browser: true, node: true },
+  env: { es6: true, browser: true, node: true, jest: true },
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
