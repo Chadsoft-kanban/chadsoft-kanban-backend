@@ -1,6 +1,6 @@
-import Member from '../models/member';
+const Member = require('../models/member');
 
-export const createMember = async (data) => {
+const createMember = async (data) => {
   try {
     const member = new Member(data);
     await member.save();
@@ -11,7 +11,7 @@ export const createMember = async (data) => {
   }
 };
 
-export const deleteMember = async (id) => {
+const deleteMember = async (id) => {
   const member = await Member.findOneAndDelete({
     _id: id,
   });
@@ -22,3 +22,5 @@ export const deleteMember = async (id) => {
 
   return { message: 'Member was deleted.' };
 };
+
+module.exports = { deleteMember, createMember };

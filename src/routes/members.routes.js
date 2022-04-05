@@ -1,9 +1,9 @@
-import { StatusCodes } from 'http-status-codes';
+const { StatusCodes } = require('http-status-codes');
 
-import { createMember, deleteMember } from '../controllers/member.controllers';
-import Member from '../models/member';
+const { createMember, deleteMember } = require('../controllers/member.controllers');
+const Member = require('../models/member');
 
-export const memberRouter = (router) => {
+const memberRouter = (router) => {
   // endpoint tworzenie użytkowników
   router.post('/member', async (req, res) => {
     const response = await createMember(req.body);
@@ -33,3 +33,5 @@ export const memberRouter = (router) => {
     }
   });
 };
+
+module.exports = memberRouter;

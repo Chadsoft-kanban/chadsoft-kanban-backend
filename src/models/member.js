@@ -16,4 +16,4 @@ const MemberSchema = mongoose.Schema(
 
 const Member = mongoose.model('Member', MemberSchema);
 
-export default Member;
+module.exports = Member;

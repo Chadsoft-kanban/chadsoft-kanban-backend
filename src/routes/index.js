@@ -1,11 +1,12 @@
-import cookieParser from 'cookie-parser';
-import { Router } from 'express';
+const cookieParser = require('cookie-parser');
+const { Router } = require('express');
 
-import { arrayColumnsRouter } from './arrayColumns.routes';
-import { columnRouter } from './column.routes';
-import { memberRouter } from './members.routes';
-import { sectionRouter } from './section.routes';
-import { taskRouter } from './tasks.routes';
+const arrayColumnsRouter = require('./arrayColumns.routes');
+const columnRouter = require('./column.routes');
+const memberRouter = require('./members.routes');
+const sectionRouter = require('./section.routes');
+const taskRouter = require('./tasks.routes');
+const photoRouter = require('./photos.routes');
 
 const router = Router();
 
@@ -16,4 +17,5 @@ columnRouter(router);
 sectionRouter(router);
 memberRouter(router);
 arrayColumnsRouter(router);
-export default router;
+photoRouter(router); // Testowy endpoint
+module.exports = router;
